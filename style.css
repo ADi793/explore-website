@@ -1,0 +1,433 @@
+/* Global stylings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #17181a;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  position: absolute;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h4,
+h5 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+a {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* nav-header */
+
+.nav-header {
+  position: relative;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  padding: 2rem 0rem;
+  z-index: 2;
+}
+
+#logo {
+  font-size: 3rem;
+}
+
+#logo a {
+  font-size: 3rem;
+  text-decoration: underline;
+  font-family: "Abril Fatface";
+}
+
+.burger {
+  cursor: pointer;
+}
+
+.burger div {
+  width: 4rem;
+  height: 0.3rem;
+  background: white;
+  margin: 0.6rem 0rem;
+  pointer-events: none;
+}
+
+/* lets build out the sections */
+
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.hero-img {
+  flex: 1 1 30rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-desc {
+  flex: 1 1 30rem;
+  padding-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  background: #18171a;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-desc h2 {
+  font-size: 7rem;
+  font-family: "Abril Fatface";
+  padding: 5rem 0rem;
+}
+
+.mountain-span {
+  color: rgb(86, 124, 228);
+}
+
+.hike-span {
+  color: rgb(167, 110, 231);
+}
+
+.fashion-span {
+  color: rgb(255, 139, 93);
+}
+
+.hero-desc a {
+  padding: 1rem 2rem;
+  margin: 3rem 0rem;
+  border: 0.2px solid white;
+  align-self: flex-start;
+}
+
+/* lets build out the navbar */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 1;
+  z-index: 1;
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+
+.nav-links {
+  flex-basis: 30rem;
+}
+
+.nav-links h3 {
+  padding: 3rem 0rem;
+}
+
+.contact {
+  flex-basis: 30rem;
+}
+
+.contact h2 {
+  padding: 3rem 0rem;
+}
+
+.contact p {
+  line-height: 3rem;
+}
+
+/* lets cover the hero-img and hero-desc for animation */
+.reveal-image,
+.reveal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100.1%;
+  height: 110%;
+  background: #17181a;
+}
+
+/* litle bug fix for scrollmagic */
+.scrollmagic-pin-spacer {
+  position: static !important;
+}
+
+/* lets build out the cursor */
+
+.cursor {
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 70% 70%;
+}
+
+.cursor span {
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+.cursor.nav-active {
+  background: rgb(86, 124, 228);
+  transform: scale(3);
+}
+
+.cursor.explore-active {
+  background: white;
+  transform: scale(3);
+}
+
+.title {
+  overflow: hidden;
+  position: relative;
+}
+
+.title-swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  mix-blend-mode: darken;
+  transform: translateY(100%);
+}
+
+.t-swipe1 {
+  background-color: rgb(86, 124, 228);
+}
+
+.t-swipe2 {
+  background: rgb(167, 110, 231);
+}
+
+.t-swipe3 {
+  background: rgb(255, 139, 93);
+}
+
+body.hide {
+  overflow: hidden;
+}
+
+/* other pages */
+
+.fashion1,
+.fashion2,
+.fashion3 {
+  min-height: 90vh;
+  display: flex;
+  width: 70%;
+  margin: 5rem auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.fashion-img {
+  flex-basis: 30rem;
+  height: 70vh;
+}
+
+.fashion-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fashion-text {
+  flex: 1;
+  flex-basis: 25rem;
+}
+
+.fashion-text h1 {
+  font-size: 6rem;
+  padding: 5rem 0rem;
+}
+
+.fashion1 h1 {
+  color: rgb(255, 139, 93);
+}
+
+.fashion2 h1 {
+  color: rgb(167, 110, 231);
+}
+
+.fashion3 h1 {
+  color: rgb(86, 124, 228);
+}
+
+.fashion-text p {
+  font-size: 2rem;
+  padding: 2rem 2rem 0rem 0rem;
+  margin-bottom: 10rem;
+}
+
+.fashion-no {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  font-size: 15rem;
+  opacity: 0.2;
+}
+
+/* swipe */
+
+.swipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+}
+
+.swipe1 {
+  background: rgb(167, 110, 231);
+  z-index: 5;
+}
+
+.swipe2 {
+  background: rgb(86, 124, 228);
+  z-index: 4;
+}
+
+.swipe3 {
+  background: rgb(255, 139, 93);
+  z-index: 3;
+}
+
+@media screen and (max-width: 1500px) {
+  .hero-img {
+    height: 50vh;
+  }
+  .fashion-text h1 {
+    font-size: 2rem;
+    padding: 1rem 0rem;
+  }
+  .fashion-text p {
+    font-size: 1.2rem;
+  }
+  .fashion-img img {
+    height: 50vh;
+    object-position: top;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  .slide {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-desc {
+    padding: 0;
+  }
+  .hero-img {
+    padding-top: 4rem;
+  }
+  .hero-desc h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0rem;
+  }
+  .hero-desc p {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .explore {
+    width: 100%;
+    /* display: block; */
+    margin: auto;
+  }
+  .detail-slide {
+    width: 100%;
+    text-align: center;
+  }
+  .fashion-text p {
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+  .fastion-text h1 {
+    margin: 2rem 0rem;
+  }
+  .fashion-nr {
+    font-size: 8rem;
+  }
+  .nav-bar {
+    display: block;
+  }
+  .nav-links {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .contact p {
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+}
